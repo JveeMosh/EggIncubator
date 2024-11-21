@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="15">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  
+
+  <title>Egg Incubator</title>
+</head>
+<body>
+  <h2>Egg Incubator</h2>
+  <p>
+    <i class="fas fa-thermometer-half" style="color:#e74c3c;"></i>
+    <span class="dht-labels">Temperature</span>
+    <span id="temperature">--</span>
+    <sup class="units">°C</sup>
+  </p>
+  <p>
+    <i class="fas fa-tint" style="color:#3498db;"></i>
+    <span class="dht-labels">Humidity</span>
+    <span id="humidity">--</span>
+    <sup class="units">%</sup>
+  </p>
+  <div id="daysCount" class="days-count">
+    Incubation Day: <span id="daysSinceStart">--</span>
+  </div>
+  <div id="hatchingNotification" class="notification1">
+    🐣 It's Hatching Day! 🐣
+  </div>
+  <div id="temperatureNotification" class="notification">
+    ⚠️ Temperature Alert! Please check the temperature ⚠️
+  </div>
+  <div id="humidityNotification" class="notification">
+    ⚠️ Humidity Alert! Please check the humidity ⚠️
+  </div>
+   <!-- Call your JS Script -->
+   <script type="module" src="app.js"></script>
+</body>
+</html>
