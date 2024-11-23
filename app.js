@@ -67,7 +67,7 @@ function fetchData() {
     if (dateStart) {
       const now = Date.now();
       const daysSinceStart = Math.floor(
-        (now - dateStart) / (1000 * 60 * 60 * 24)
+        (now - dateStart) / (1000 * 60 * 60 * 24) + 1
       );
       document.getElementById("daysSinceStart").textContent =
         daysSinceStart || "--";
