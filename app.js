@@ -23,7 +23,7 @@ function fetchData() {
 
   // Listen for temperature changes
   onValue(temperatureRef, (snapshot) => {
-    const temperature = snapshot.val();
+    const temperature = snapshot.val() + 2;
     document.getElementById("temperature").textContent = temperature || "--";
 
     if (temperature < 35) {
@@ -46,19 +46,7 @@ function fetchData() {
     const humidity = snapshot.val();
     document.getElementById("humidity").textContent = humidity || "--";
 
-    if (humidity < 65) {
-      displayNotification(
-        "humidityNotification",
-        "Humidity is below normal range!"
-      );
-    } else if (humidity > 70) {
-      displayNotification(
-        "humidityNotification",
-        "Warning: Humidity is above normal range!"
-      );
-    } else {
-      hideNotification("humidityNotification");
-    }
+  
   });
 
   // Listen for changes to Date_start
