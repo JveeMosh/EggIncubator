@@ -16,6 +16,16 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 console.log("Firebase initialized:", app); // Log the Firebase initialization
 
+// Ensure DOM is fully loaded before adding event listener
+document.addEventListener("DOMContentLoaded", function () {
+  const button1 = document.getElementById("button1");
+  if (button1) {
+    button1.addEventListener("click", function () {
+      window.open("incubationCyclehistory.html", "_blank");
+    });
+  }
+});
+
 function fetchData() {
   const temperatureRef = ref(database, "DHT/temperature");
   const humidityRef = ref(database, "DHT/humidity");
@@ -46,7 +56,7 @@ function fetchData() {
     const humidity = snapshot.val();
     document.getElementById("humidity").textContent = humidity || "--";
 
-  
+   
   });
 
   // Listen for changes to Date_start
@@ -55,7 +65,7 @@ function fetchData() {
     if (dateStart) {
       const now = Date.now();
       const daysSinceStart = Math.floor(
-        (now - dateStart) / (1000 * 60 * 60 * 24) + 1
+        (now - dateStart) / (1000 * 60 * 60 * 24) +1
       );
       document.getElementById("daysSinceStart").textContent =
         daysSinceStart || "--";
@@ -77,5 +87,6 @@ function hideNotification(id) {
   const notification = document.getElementById(id);
   notification.style.display = "none";
 }
+
 
 fetchData();
