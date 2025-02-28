@@ -37,6 +37,25 @@ p {
   border-radius: 10px;
   display: none; /* Initially hidden */
 }
+.button1{
+  border: none;
+  background: #e86507;
+  height: 60px;
+  color: white;
+  width: 120px;
+  border-radius: 3px;
+}
+.button1:hover{
+  border-width: 4px;
+  border: solid;
+  border-color: #e86507;
+  background: none;
+  height: 60px;
+  color: black;
+  width: 120px;
+  border-radius: 3px;
+  cursor: pointer;
+}
 
 .notification1 {
   font-size: 2.5rem;
